@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if search %}
+        <div class="search">
+            <span class="title">Search Results: {{search}}</span><span class="sectit" style="opacity: 0;">{{search}}</span><span class="secpage" style="opacity: 0">{{page}}</span>
+            <div class="main"></div>
+            <div class="bottom-bar"></div>
+        </div>
+    {% else %}
+        <div class="home">
+            <div class="suggestions outercol1 outercol">
+                <div class="header">
+                    <div class="title">
+                        <span style="font-size: 1.1rem">Suggestion</span>
+                        <div class="line"></div>
+                    </div>
+                    <div class="suggestion-navbar">
+                        <button class="hot btnselected" onclick="suggestionNav('hot')">Hot</button>
+                        <button class="top-rated" onclick="suggestionNav('top-rated')">Top Rated</button>
+                        <button class="now-playing" onclick="suggestionNav('now-playing')">Now Playing</button>
+                    </div>
+                    <div class="view-more"><a href="/movie?type=hot">>> view more</a></div>
+                </div>
+                <div class="main">
+                    <span style="color: #fff; margin-left: 5px;">loading...</span>
+                </div>
+            </div>
+            <div class="movies outercol2 outercol">
+                <div class="header">
+                    <div class="title">
+                        <span style="font-size: 1.1rem">Latest Movies</span>
+                        <div class="line"></div>
+                    </div>
+                    <div class="suggestion-navbar">
+                        <button class="btn All btnselected" onclick="moviesNav('')">All</button>
+                        <button class="btn Action" onclick="moviesNav('Action')">Action</button>
+                        <button class="btn Adventure" onclick="moviesNav('Adventure')">Adventure</button>
+                        <button class="btn Animation" onclick="moviesNav('Animation')">Animation</button>
+                        <button class="btn Comedy" onclick="moviesNav('Comedy')">Comedy</button>
+                        <button class="btn Crime" onclick="moviesNav('Crime')">Crime</button>
+                        <button class="btn Documentary" onclick="moviesNav('Documentary')">Documentary</button>
+                        <button class="btn Drama" onclick="moviesNav('Drama')">Drama</button>
+                        <button class="btn Family" onclick="moviesNav('Family')">Family</button>
+                        <button class="btn Fantasy" onclick="moviesNav('Fantasy')">Fantasy</button>
+                        <button class="btn History" onclick="moviesNav('History')">History</button>
+                        <button class="btn Horror" onclick="moviesNav('Horror')">Horror</button>
+                        <button class="btn Music" onclick="moviesNav('Music')">Music</button>
+                        <button class="btn Mystery" onclick="moviesNav('Mystery')">Mystery</button>
+                        <button class="btn Romance" onclick="moviesNav('Romance')">Romance</button>
+                        <button class="btn Science-Fiction science-fiction" onclick="moviesNav('Science Fiction')">Science Fiction</button>
+                        <button class="btn TV-Movie tv-movie" onclick="moviesNav('TV Movie')">TV Movie</button>
+                        <button class="btn Thriller" onclick="moviesNav('Thriller')">Thriller</button>
+                        <button class="btn War" onclick="moviesNav('War')">War</button>
+                        <button class="btn Western" onclick="moviesNav('Western')">Western</button>
+                    </div>
+                    <div class="view-more"><a href="/movie?type=hot">>> view more</a></div>
+                </div>
+                <div class="main">
+                    <span style="color: #fff; margin-left: 5px;">loading...</span>
+                </div>
+            </div>
+            <div class="tvshows outercol3 outercol">
+                <div class="header">
+                    <div class="title">
+                        <span style="font-size: 1.1rem">Latest TV-Shows</span>
+                        <div class="line"></div>
+                    </div>
+                    <!--Countries-->
+                    <div class="suggestion-navbar">
+                        <button class="btn All btnselected" onclick="tvshowsNav('')">All</button>
+                        <button class="btn United-States" onclick="tvshowsNav('United-States')">United States</button>
+                        <button class="btn United-Kingdom" onclick="tvshowsNav('United-Kingdom')">United Kingdom</button>
+                        <button class="btn Japan" onclick="tvshowsNav('Japan')">Japan</button>
+                    </div>
+                    <div class="view-more"><a href="/movie?type=hot">>> view more</a></div>
+                </div>
+                <div class="main">
+                    <span style="color: #fff; margin-left: 5px;">loading...</span>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

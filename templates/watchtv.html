@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="watch-tv" data-seas={{seas}} data-eps={{eps}}>
+    <div class="main-content">
+        <div class="top-bar">
+            <i class="ri-alarm-warning-fill"></i>Just switch the server if the video player is not responsive or an error occurred.
+        </div>
+        <div class="player iframe-embed-wrapper iframe-embed-responsive-16by9">
+            <h1 class="loading-iframe">Loading<span class="dot">.</span></h1>
+            <iframe class="video-iframe iframe-embed" src={{iframeurl}} frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="bottom-bar">
+            <i class="ri-alert-fill"></i>
+            <span>Report</span>
+        </div>
+    </div>
+    <div class="servers">
+        <div class="header">
+            <div>Playing on: <span class="playing-on-server">Server 2embed</span></div>
+            <div class="list-server">
+                <span class="header-list-server"><span>List Server</span><i class="ri-arrow-drop-down-fill"></i></span>
+                <div class="server" style="display: none;">
+                    <div class="tv-server-active tv-li"><div class="c1"><i class="ri-play-fill icon1"></i><span>Server 2embed</span></div></div>
+                    <div class="tv-li"><div class="c1"><i class="ri-play-fill icon1"></i><span>Server 2embed-2</span></div></div>
+                    <div class="tv-li"><div class="c1"><i class="ri-play-fill icon1"></i><span>Server superembed</span></div></div>
+                    <div class="tv-li"><div class="c1"><i class="ri-play-fill icon1"></i><span>Server superembed-2</span></div></div>
+                    <div class="tv-li"><div class="c1"><i class="ri-play-fill icon1"></i><span>Server vidsrc</span></div></div>
+                    <div class="tv-li"><div class="c1"><i class="ri-play-fill icon1"></i><span>Server fsapi</span></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="ul"></div>
+    </div>
+</div>
+<div class="indtv-section indtv2" data-id={{id}}>
+    <span class="top-left-path" style="opacity: 0;"></span>
+    <div class="mainbg" style="opacity: 0;">
+        <img class="imgbg">
+        <div class="shadow"></div>
+        <div class="shadow2"></div>
+    </div>
+    <div class="outer-col1">
+        <div class="top-left-info">
+            <span class="views"><i class="ri-eye-fill"></i> <span class="num"></span> views</span>
+            <button class="trailer-btn"><i class="ri-vidicon-fill"></i> Watch Trailer</button>
+        </div>
+        <span class="title"></span>
+        <p class="description" style="font-style:italic;"></p>
+        <div class="infos">
+            <div class="col1">
+                <span class="tv-status">TV Status: </span>
+                <span class="release">Release Year: </span>
+                <span class="first-air-date">First Air Date: </span>
+                <span class="genres">Genres: </span>
+                <span class="actors">Actors: </span>
+                <span class="country">Country: </span>
+            </div>
+            <div class="col2">
+                <span class="episode-runtime">Episode runtime: </span>
+                <span class="starring">Starring: </span>
+                <span class="created-by">Created by </span>
+                <span class="production">Production: </span>
+            </div>
+        </div>
+    </div>
+    <div class="outer-col2" style="opacity: 0;">
+        <!-- Play icon animation -->
+        <div class="bwa-content">
+            <div class="loader"></div>
+            <a href={{redurl}} class="bwac-btn" title="Click to play"> <i class="ri-play-fill"></i> </a>
+        </div>
+        <div class="episodes">
+            <ul>
+                <li class="header">Quick Play</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="similar-tv-section" data-id={{id}}>
+    <div class="title">You may like</div>
+    <div class="main"></div>
+    <div class="bottom-bar"></div>
+</div>
+{% endblock %}

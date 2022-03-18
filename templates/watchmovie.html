@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="watch-movie">
+    <div class="main-content">
+        <div class="top-bar">
+            <i class="ri-alarm-warning-fill" style="margin-right: 5px;"></i>Just switch the server if the video player is not responsive or an error occurred.
+        </div>
+        <div class="player iframe-embed-wrapper iframe-embed-responsive-16by9">
+            <h1 class="loading-iframe">Loading<span class="dot">.</span></h1>
+            <iframe class="video-iframe iframe-embed" src={{iframeurl}} frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="bottom-bar">
+            <i class="ri-alert-fill"></i>
+            <span>Report</span>
+        </div>
+    </div>
+    <div class="servers">
+        <div class="header">Playing on: <span class="playing-on-server">Server 2embed</span></div>
+        <div class="ul">
+            <div class="server-block server-active li"><div class="c1"><i class="ri-play-fill icon1"></i><i class="ri-pause-fill pause icon2"></i> <span>Server 2embed</span></div><div class="c2">ON<br>AIR</div></div>
+            <div class="server-block li"><div class="c1"><i class="ri-play-fill icon1"></i><i class="ri-pause-fill pause icon2"></i> <span>Server 2embed-2</span></div><div class="c2">ON<br>AIR</div></div>
+            <div class="server-block li"><div class="c1"><i class="ri-play-fill icon1"></i><i class="ri-pause-fill pause icon2"></i> <span>Server superembed</span></div><div class="c2">ON<br>AIR</div></div>
+            <div class="server-block li"><div class="c1"><i class="ri-play-fill icon1"></i><i class="ri-pause-fill pause icon2"></i> <span>Server superembed-2</span></div><div class="c2">ON<br>AIR</div></div>
+            <div class="server-block li"><div class="c1"><i class="ri-play-fill icon1"></i><i class="ri-pause-fill pause icon2"></i> <span>Server vidsrc</span></div><div class="c2">ON<br>AIR</div></div>
+            <div class="server-block li"><div class="c1"><i class="ri-play-fill icon1"></i><i class="ri-pause-fill pause icon2"></i> <span>Server gdatabase</span></div><div class="c2">ON<br>AIR</div></div>
+            <div class="server-block li"><div class="c1"><i class="ri-play-fill icon1"></i><i class="ri-pause-fill pause icon2"></i> <span>Server fsapi</span></div><div class="c2">ON<br>AIR</div></div>
+        </div>
+    </div>
+</div>
+<div class="indmovie-section indmovie2" data-id={{id}}>
+    <span class="top-left-path" style="display: none;"></span>
+    <div class="outer-col1">
+        <div class="top-left-info">
+            <span class="views"><i class="ri-eye-fill"></i> <span class="num"></span> views</span>
+            <button class="trailer-btn"><i class="ri-vidicon-fill"></i> Watch Trailer</button>
+        </div>
+        <span class="title"></span>
+        <p class="description" style="font-style:italic;"></p>
+        <div class="infos">
+            <div class="col1">
+                <span class="genres">Genres: </span>
+                <span class="actors">Actors: </span>
+                <span class="directors">Directors: </span>
+                <span class="country">Country: </span>
+            </div>
+            <div class="col2">
+                <span class="duration">Duration: </span>
+                <span class="quality">Quality: <div class="quality-block">HD</div></span>
+                <span class="release">Release Year: </span>
+                <span class="imdb">Ratings: </span>
+            </div>
+        </div>
+    </div>
+    <div class="outer-col2">
+    </div>
+</div>
+<div class="similar-movie-section" data-id={{id}}>
+    <div class="title">You may like</div>
+    <div class="main"></div>
+    <div class="bottom-bar"></div>
+</div>
+{% endblock %}

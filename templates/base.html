@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block extrahead %}{% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/index.css">
+    <title>Watch Movies Online Free</title>
+</head>
+<body>
+    <div id="root">
+        <header>
+            <div class="normal-hidden" onmouseenter="(e) => {document.querySelector('.normal-hidden').style.display = 'flex'}" onmouseout="(e) => document.querySelector('.normal-hidden').style.display = 'none'" ></div>
+            <div class="col1">      
+                <div class="hamburger" onclick="mobmenu()">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+                <a href="/">
+                    <img src="../static/images/logo.png" alt="logo" class="logo"/>
+                </a>
+                <nav>
+                    <a href="/" class='nav-item' onmouseenter="(e) => {document.querySelector('.normal-hidden').style.display = 'none'}"><i class="ri-home-wifi-line"></i><span>Home</span></a>
+                    <a href="/movies" onmouseenter="hover('movies-genre', event)" onmouseout="setTimeout(() => {document.querySelector('.normal-hidden').style.display = 'none';}, 3000)" class="nav-item"><i class="ri-movie-line"></i><span>Movies</span></a>
+                    <a href="/movies" onmouseenter="hover('movies-country', event)"  onmouseout="setTimeout(() => {document.querySelector('.normal-hidden').style.display = 'none';}, 3000)" class="nav-item"><i class="ri-global-line"></i><span>Country</span></a>
+                    <a href="/tvshows" onmouseenter="hover('tv-shows-genre', event)" onmouseout="setTimeout(() => {document.querySelector('.normal-hidden').style.display = 'none';}, 3000)" class="nav-item"><i class="ri-tv-line"></i><span>Tv Shows</span></a>
+                </nav>
+            </div>
+            <div class="col2">
+                <form class="norm-search" action="/">
+                    <input type="text" name="search" id="search" placeholder="Search...(press icon)"/>
+                    <i class="ri-search-line" onclick="search(this)"></i>
+                </form>
+                <i class="ri-search-line imp-i" onclick="clickMobS()"></i>
+            </div>
+        </header>
+        <div class="mob_nav mobnav" style="transition: all 100ms">
+            <a href="/">
+                <div class="row">
+                    <div class="header">
+                        <i class="ri-home-wifi-line"></i>
+                        <span>Home</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/movies" class="mobnav-movies-genres-a">
+                <div class="row">
+                    <div class="header">
+                        <i class="ri-movie-line"></i>
+                        <span>Movies</span>
+                    </div>
+                    <div class="maincontent mob-movie-genres"></div>
+                </div>
+            </a>
+            <a href="/movies" class="mobnav-countries-a">
+                <div class="row">
+                    <div class="header">
+                        <i class="ri-global-line"></i>
+                        <span>Country</span>
+                    </div>
+                    <div class="maincontent mob-countries">
+                    </div>
+                </div>
+            </a>
+            <a href="/tvshows" class="mobnav-tv-genres-a">
+                <div class="row">
+                    <div class="header">
+                        <i class="ri-tv-line"></i>
+                        <span>Tv Shows</span>
+                    </div>
+                    <div class="maincontent mob-tv-genres">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="mob-search" style="position: fixed;top: 70px;left: 0px; z-index: 10">
+            <form>
+              <input type="text" name="search" id="search" placeholder="Search...(press icon)"/>
+              <i class="ri-search-line" onclick="search(this)"></i>
+            </form>
+        </div>
+        <main class='outerHome' style="margin-top: 80px;position: relative;transition: all 100ms">
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <span class="title">TV Shows Regions</span>
+            <div class="inner-cols"></div>
+            <a href="/">
+                <img src="../static/images/logo.png" alt="logo" class="logo"/>
+            </a>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../static/js/index.js"></script>
+</body>
+</html>

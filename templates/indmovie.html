@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="indmovie-section" data-id={{id}}>
+    <span class="top-left-path"></span>
+    <div class="mainbg">
+        <img class="imgbg">
+        <div class="shadow"></div>
+        <div class="shadow2"></div>
+    </div>
+    <div class="outer-col1">
+        <div class="top-left-info">
+            <span class="views"><i class="ri-eye-fill"></i> <span class="num"></span> views</span>
+            <button class="trailer-btn"><i class="ri-vidicon-fill"></i> Watch Trailer</button>
+        </div>
+        <span class="title"></span>
+        <p class="description" style="font-style:italic;"></p>
+        <div class="infos">
+            <div class="col1">
+                <span class="genres">Genres: </span>
+                <span class="actors">Actors: </span>
+                <span class="directors">Directors: </span>
+                <span class="country">Country: </span>
+            </div>
+            <div class="col2">
+                <span class="duration">Duration: </span>
+                <span class="quality">Quality: <div class="quality-block">HD</div></span>
+                <span class="release">Release Year: </span>
+                <span class="imdb">Ratings: </span>
+            </div>
+        </div>
+    </div>
+    <div class="outer-col2">
+        <!-- Play icon animation -->
+        <div class="bwa-content">
+            <div class="loader"></div>
+            <a href={{redurl}} class="bwac-btn" title="Click to play"> <i class="ri-play-fill"></i> </a>
+        </div>
+    </div>
+</div>
+<div class="similar-movie-section" data-id={{id}}>
+    <div class="title">You may like</div>
+    <div class="main"></div>
+    <div class="bottom-bar"></div>
+</div>
+{% endblock %}

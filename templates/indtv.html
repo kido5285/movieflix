@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $(document).ready(function(){    
+        //Check if the current URL contains '#'
+        if(document.URL.indexOf("#")==-1){
+            // Set the URL to whatever it was plus "#".
+            url = document.URL+"#";
+            location = "#";
+    
+            //Reload the page
+            location.reload(true);
+        }
+    });
+</script>
+<div class="indtv-section" data-id={{id}}>
+    <span class="top-left-path"></span>
+    <div class="mainbg">
+        <img class="imgbg">
+        <div class="shadow"></div>
+        <div class="shadow2"></div>
+    </div>
+    <div class="outer-col1">
+        <div class="top-left-info">
+            <span class="views"><i class="ri-eye-fill"></i> <span class="num"></span> views</span>
+            <button class="trailer-btn"><i class="ri-vidicon-fill"></i> Watch Trailer</button>
+        </div>
+        <span class="title"></span>
+        <p class="description" style="font-style:italic;"></p>
+        <div class="infos">
+            <div class="col1">
+                <span class="tv-status">TV Status: </span>
+                <span class="release">Release Year: </span>
+                <span class="first-air-date">First Air Date: </span>
+                <span class="genres">Genres: </span>
+                <span class="actors">Actors: </span>
+                <span class="country">Country: </span>
+            </div>
+            <div class="col2">
+                <span class="episode-runtime">Episode runtime: </span>
+                <span class="starring">Starring: </span>
+                <span class="created-by">Created by </span>
+                <span class="production">Production: </span>
+            </div>
+        </div>
+    </div>
+    <div class="outer-col2">
+        <!-- Play icon animation -->
+        <div class="bwa-content">
+            <div class="loader"></div>
+            <a href={{redurl}} class="bwac-btn" title="Click to play"> <i class="ri-play-fill"></i> </a>
+        </div>
+        <div class="episodes">
+            <ul>
+                <li class="header">Quick Play</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="similar-tv-section" data-id={{id}}>
+    <div class="title">You may like</div>
+    <div class="main"></div>
+    <div class="bottom-bar"></div>
+</div>
+{% endblock %}

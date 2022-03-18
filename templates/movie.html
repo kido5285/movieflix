@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if movietype == 'hot' %}
+<div class="movie-section">
+    <div class="title">Hot Movie</div>
+    <div class="main"></div>
+    <div class="bottom-bar"></div>
+</div>
+{% elif movietype=='top-rated' %}
+<div class="movie-section">
+    <div class="title">Top Rated Movie</div>
+    <div class="main"></div>
+    <div class="bottom-bar"></div>
+</div>
+{% elif movietype=='now-playing' %}
+<div class="movie-section">
+    <div class="title">Now Playing Movie</div>
+    <div class="main"></div>
+    <div class="bottom-bar"></div>
+</div>
+{% endif %}
+{% endblock %}
